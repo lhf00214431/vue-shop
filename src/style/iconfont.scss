@@ -1,9 +1,15 @@
+// @font-face {
+//     font-family: "iconfont"; /* Project id 3800913 */
+//     src: url('iconfont.woff2?t=1669793894667') format('woff2'),
+//          url('iconfont.woff?t=1669793894667') format('woff'),
+//          url('iconfont.ttf?t=1669793894667') format('truetype');
+//   }
 @font-face {
-    font-family: "iconfont"; /* Project id 3800913 */
-    src: url('iconfont.woff2?t=1669793894667') format('woff2'),
-         url('iconfont.woff?t=1669793894667') format('woff'),
-         url('iconfont.ttf?t=1669793894667') format('truetype');
-  }
+  font-family: 'iconfont';  /* Project id 3800913 */
+  src: url('//at.alicdn.com/t/c/font_3800913_ec643a8yscj.woff2?t=1670205242430') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3800913_ec643a8yscj.woff?t=1670205242430') format('woff'),
+       url('//at.alicdn.com/t/c/font_3800913_ec643a8yscj.ttf?t=1670205242430') format('truetype');
+}
   
   .iconfont {
     font-family: "iconfont" !important;

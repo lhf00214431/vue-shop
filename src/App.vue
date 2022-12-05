@@ -5,6 +5,13 @@
       地址地址地支地址地址地址地支地址地址地址地支地址地址地址地支地址
       <span class="iconfont position__notice">&#xe729;</span>
     </div>
+    <div class="search">
+      <span class="iconfont search__icon">&#xe741;</span>
+      <span class="search__text">山姆会员商店优惠商品</span>
+    </div>
+    <div class="banner">
+      <img src="" alt="">
+    </div>
   </div>
   <div class="docker">
     <div class="docker__item docker__item--active">
@@ -53,6 +60,20 @@
       top: .18rem;
       right: 0;
       font-size: .2rem;
+    }
+  }
+  .search {
+    line-height: .32rem;
+    background: #F5F5F5;
+    color:#B7B7B7;
+    border-radius: .16rem;
+    font-size: .14rem;
+    &__icon {
+      position: relative;
+      top: .02rem;
+      display: inline-block;
+      font-size: .2rem;
+      padding: 0 .06rem 0 .16rem;
     }
   }
 }
