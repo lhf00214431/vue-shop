@@ -1,20 +1,20 @@
 <template>
   <div class="wrapper">
   <StaticPart />
-  <HomeNearby />
+  <Nearby />
   </div>
-  <HomeDocker />
+  <Docker />
 </template>
 <script>
 import StaticPart from '@/views/home/StaticPart'
-import HomeNearby from '@/views/home/Nearby'
-import HomeDocker from '@/views/home/Docker'
+import Nearby from '@/views/home/Nearby'
+import Docker from '@/views/home/Docker'
 export default {
-  name: 'HomeHome',
+  name: 'Home',
   components: {
     StaticPart,
-    HomeNearby,
-    HomeDocker
+    Nearby,
+    Docker
   }
 }
 </script>

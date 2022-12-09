@@ -2,70 +2,34 @@
   <div class="wrapper">
     <img :src="user" alt="" class="wrapper__img">
     <div class="wrapper__input">
-      <input v-model="data.username" type="text" class="wrapper__input__content" placeholder="请输入用户名">
+      <input type="text" class="wrapper__input__content" placeholder="请输入用户名">
     </div>
     <div class="wrapper__input">
-      <input v-model="data.password" type="password" class="wrapper__input__content" placeholder="请输入密码">
+      <input type="password" class="wrapper__input__content" placeholder="请输入密码">
     </div>
-    <div class="wrapper__login-button" @click="handleLogin">登录</div>
-    <div class="wrapper__login-link">立即注册</div>
-    <Toast v-if="data.showToast" :message="data.toastMessage"/>
+    <div class="wrapper__input">
+      <input type="password" class="wrapper__input__content" placeholder="确认密码">
+    </div>
+    <div class="wrapper__register-button">注册</div>
+    <div class="wrapper__register-link" @click="handleLogin">已有账号去登录</div>
   </div>
 </template>
 
 <script>
 import { useRouter } from 'vue-router'
 import user from '@/image/user.png'
-import { reactive } from 'vue'
-import { post } from '@/utils/request'
-import Toast from '@/components/Toast'
 export default {
-  name: 'Login',
-  components: { Toast },
+  name: 'Register',
   props: {
   },
   setup () {
-    const data = reactive({
-      username: '',
-      password: '',
-      showToast: false,
-      toastMessage: ''
-    })
     const router = useRouter()
-
-    const showToast = (message) => {
-      data.showToast = true
-      data.toastMessage = message
-      setTimeout(() => {
-        data.showToast = false
-        data.toastMessage = ''
-      }, 2000)
-    }
-
-    const handleLogin = async () => {
-      try {
-        const result = await post('/api/user/login',
-          {
-            username: data.username,
-            password: data.password
-          })
-
-        if (result?.error === 0) {
-          localStorage.isLogin = true
-          router.push({ name: 'Home' })
-        } else {
-          showToast('登录失败')
-          // alert('登录失败')
-        }
-      } catch (e) {
-        showToast('请求失败')
-        // alert('请求失败')
-      }
+    const handleLogin = () => {
+      router.push({ name: 'Login' })
     }
     return {
       user,
-      handleLogin,
-      data
+      handleLogin
     }
   }
 }
@@ -105,7 +69,7 @@ export default {
       }
     }
   }
-  &__login-button{
+  &__register-button{
     margin: .32rem .4rem 0.16rem .4rem;
     line-height: .48rem;
     background: #0091FF;
@@ -115,7 +79,7 @@ export default {
     font-size: .16rem;
     text-align: center;
   }
-  &__login-link {
+  &__register-link {
     text-align: center;
     font-size: .14rem;
     color: $content-notice-font-color;

@@ -17,7 +17,7 @@
 <script scoped>
 import near from '@/image/near.png'
 export default {
-  name: 'HomeNearby',
+  name: 'Nearby',
   props: {
   },
   setup () {
