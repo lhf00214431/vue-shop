@@ -8,7 +8,7 @@
       <input v-model="password" type="password" class="wrapper__input__content" placeholder="请输入密码">
     </div>
     <div class="wrapper__login-button" @click="handleLogin">登录</div>
-    <div class="wrapper__login-link">立即注册</div>
+    <div class="wrapper__login-link" @click="handleRegisterClick">立即注册</div>
     <Toast v-if="show" :message="toastMessage"/>
   </div>
 </template>
@@ -50,6 +50,16 @@ const userLoginEffect = (showToast) => {
   return { username, password, handleLogin }
 }
 
+const useRegisterEffect = () => {
+  const router = useRouter()
+  const handleRegisterClick = () => {
+    router.push({ name: 'Register' })
+  }
+  return {
+    handleRegisterClick
+  }
+}
+
 export default {
   name: 'Login',
   components: { Toast },
@@ -58,14 +68,15 @@ export default {
   setup () {
     const { show, toastMessage, showToast } = useToastEffect()
     const { username, password, handleLogin } = userLoginEffect(showToast)
-
+    const { handleRegisterClick } = useRegisterEffect()
     return {
       username,
       password,
       user,
       handleLogin,
       show,
-      toastMessage
+      toastMessage,
+      handleRegisterClick
     }
   }
 }
